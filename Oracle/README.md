@@ -159,7 +159,21 @@ ORA-01017: invalid username/password; logon denied
 
 </details>
 
-### [참고]
+### [참고 1]
+
+<details>
+
+<summary>SQL PLUS란?</summary>
+
+> - 오라클에서만 제공하는 명령어
+> - SQL문을 실행시키고 그 결과를 볼 수 있도록 오라클에서 제공하는 툴
+> - SQL과 달리 SQL*Plus는 출력 형식을 지정하거나 환경설정을 할 수 있는 명령어 명령어
+
+</details>
+
+<br>
+
+### [참고 2]
 
 <details>
 
@@ -172,4 +186,62 @@ $ exit
 Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
 ```
 
-<detilas>
+</details>
+
+<br>
+
+### [참고 3]
+
+<details>
+<summary>SQL플러스에서 방향키 이동</summary>
+
+### 1. rlwrap 설치
+
+```shell
+$ brew install rlwrap
+```
+
+<details>
+<summary>console</summary>
+
+```shell
+Running `brew update --auto-update`...
+==> Auto-updated Homebrew!
+Updated 2 taps (homebrew/core and homebrew/cask).
+==> New Formulae
+ghorg
+
+You have 4 outdated formulae installed.
+You can upgrade them with brew upgrade
+or list them with brew outdated.
+
+==> Downloading https://ghcr.io/v2/homebrew/core/readline/manifests/8.1.2
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/readline/blobs/sha256:976185ec2
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/rlwrap/manifests/0.45.2
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/rlwrap/blobs/sha256:7a3f36bd736
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Installing dependencies for rlwrap: readline
+==> Installing rlwrap dependency: readline
+==> Pouring readline--8.1.2.monterey.bottle.tar.gz
+🍺  /usr/local/Cellar/readline/8.1.2: 48 files, 1.6MB
+==> Installing rlwrap
+==> Pouring rlwrap--0.45.2.monterey.bottle.tar.gz
+🍺  /usr/local/Cellar/rlwrap/0.45.2: 45 files, 389KB
+==> Running `brew cleanup rlwrap`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+```
+
+</details>
+
+### 2. SQLPLus 접속 시 ```rlwrap```으로 감싸기
+```shell
+$ docker exec -it oracle rlwrap sqlplus
+```
+
+</details>
